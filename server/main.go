@@ -15,7 +15,6 @@ func (s *server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	// 	w.Header().Set("Content-Type", "x-reality")
 	case strings.HasSuffix(r.URL.Path, ".usdz"):
 		w.Header().Set("Content-Type", "model/usd")
-		return
 	}
 	s.fileHandler.ServeHTTP(w, r)
 }
